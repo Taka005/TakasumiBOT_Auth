@@ -3,8 +3,6 @@ session_start();
 
 $GLOBALS['base_url'] = "https://discord.com";
 
-$GLOBALS['bot_token'] = null;
-
 function gen_state(){
     $_SESSION['state'] = bin2hex(openssl_random_pseudo_bytes(12));
     return $_SESSION['state'];
