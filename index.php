@@ -44,6 +44,7 @@ function is_animated($image){
 </head>
 <body>
 	<main class="p-0 base">
+		<h1 class="text-center">TakasumiBOT Members</h1>
 	<?php
 	if(isset($_SESSION['user'])){
 		$avatar_url = "https://cdn.discordapp.com/avatars/".$_SESSION['user_id']."/".$_SESSION['user_avatar'].is_animated($_SESSION['user_avatar']);
