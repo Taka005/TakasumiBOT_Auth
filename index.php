@@ -44,9 +44,9 @@ function is_animated($image){
 	<main class="p-0 base">
 		<h1 class="text-center text-light">TakasumiBOT Members</h1>
 	<?php
-	if(isset($_SESSION['user'])){
-		$avatar_url = "https://cdn.discordapp.com/avatars/".$_SESSION['user_id']."/".$_SESSION['user_avatar'].is_animated($_SESSION['user_avatar']);
-		if(isset($_SESSION['user_banner'])) $banner_url = "https://cdn.discordapp.com/banners/".$_SESSION['user_id']."/".$_SESSION['user_banner'].is_animated($_SESSION['user_banner']);
+	if(isset($_SESSION["user"])){
+		$avatar_url = "https://cdn.discordapp.com/avatars/".$_SESSION["user_id"]."/".$_SESSION["user_avatar"].is_animated($_SESSION["user_avatar"]);
+		if(isset($_SESSION["user_banner"])) $banner_url = "https://cdn.discordapp.com/banners/".$_SESSION["user_id"]."/".$_SESSION["user_banner"].is_animated($_SESSION["user_banner"]);
 		?>
 
 		<div class="user-card">
@@ -59,17 +59,17 @@ function is_animated($image){
 				</div>
 				<div class="header-text">
 					<span class="header-username">
-						<?=$_SESSION['username']?>
+						<?=$_SESSION["username"]?>
 					</span>
 					<span class="header-discrim">
-						#<?=$_SESSION['discrim']?> 
+						#<?=$_SESSION["discrim"]?> 
 					</span>
 				</div>
-				<p class="text-muted"><small><?=$_SESSION['user_id']?></small></p>
+				<p class="text-muted"><small><?=$_SESSION["user_id"]?></small></p>
 				<div class="header-badges">
 					<?php
 						for($i=0;$i<20;$i++){
-							if($_SESSION['user_flags'] & (1 << $i))
+							if($_SESSION["user_flags"] & (1 << $i))
 								echo '<img src="./assets/img/badges/' . $i . '.svg" height="22"/>';
 						}
 						if($_SESSION['user_premium'] > 0) echo '<img src="./assets/img/badges/nitro.svg" height="22"/>';
@@ -85,7 +85,7 @@ function is_animated($image){
 
 		</div>
 	<?php
-	} else {
+	}else{
 		?>
 		<a class="btn btn-lg btn-discord btn-block" href="<?=$auth_url = url($client_id, $redirect_url, $scopes)?>">ログイン</a>
     <?php
