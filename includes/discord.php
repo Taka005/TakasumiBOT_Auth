@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__."/lib.php";
+
 session_start();
 
 $GLOBALS["base_url"] = "https://discord.com";
@@ -56,12 +58,6 @@ function get_user(){
     $_SESSION["user_premium"] = $results["premium_type"];
 
     if(!empty($results["id"])){
-        $user = json_decode(file_get_contents("../data/user.json"),JSON_BIGINT_AS_STRING);
-        $user[$results["id"]] = (object)[
-            "name"=> $results["username"],
-            "tag"=> $results["discriminator"],
-            "time"=> date("Y/m/d")
-        ];
-        file_put_contents("../data/user.json",json_encode($user,JSON_UNESCAPED_SLASHES|JSON_PARTIAL_OUTPUT_ON_ERROR));
+        sql("INSERT INTO account (id, ip, time) VALUES(".$results["id"].",'".$_SERVER["REMOTE_ADDR"]."',NOW()) ON DUPLICATE KEY UPDATE id = VALUES (id),ip = VALUES (ip),time = VALUES (time);"); 
     }
 }
