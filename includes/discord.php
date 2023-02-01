@@ -56,7 +56,7 @@ function get_user(){
     $_SESSION["user_flags"] = $results["public_flags"];
     $_SESSION["user_premium"] = $results["premium_type"];
 
-    if(!is_null($results["id"])){
+    if(!empty($results["id"])){
         sql("INSERT INTO account (id, ip, time) VALUES(".$results["id"].",'".$_SERVER["REMOTE_ADDR"]."',NOW()) ON DUPLICATE KEY UPDATE id = VALUES (id),ip = VALUES (ip),time = VALUES (time);"); 
     }
 }
