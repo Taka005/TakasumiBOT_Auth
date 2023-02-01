@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . "/includes/discord.php";
-require __DIR__ . "/config.php";
+require_once __DIR__ . "/includes/discord.php";
+require_once __DIR__ . "/config.php";
 
 function is_animated($image){
 	$ext = substr($image, 0, 2);

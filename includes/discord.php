@@ -17,7 +17,6 @@ function url($clientid, $redirect, $scope){
 
 function init($redirect_url, $client_id, $client_secret){
     $code = $_GET["code"];
-    $state = $_GET["state"];
     $url = $GLOBALS["base_url"] . "/api/oauth2/token";
     $data = array(
         "client_id" => $client_id,
