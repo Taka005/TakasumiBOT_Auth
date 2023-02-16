@@ -1,2 +1,2 @@
 # takasumibot_members
-TakasumiBOT Members 登録サイト
+TakasumiBOT 認証システム
