@@ -47,8 +47,7 @@ function is_animated($image){
 	if(isset($_SESSION["user"])){
 		$avatar_url = "https://cdn.discordapp.com/avatars/".$_SESSION["user_id"]."/".$_SESSION["user_avatar"].is_animated($_SESSION["user_avatar"]);
 		if(isset($_SESSION["user_banner"])) $banner_url = "https://cdn.discordapp.com/banners/".$_SESSION["user_id"]."/".$_SESSION["user_banner"].is_animated($_SESSION["user_banner"]);
-		?>
-
+	?>
 		<div class="user-card">
 			<div class="header-banner" style="background:#<?=str_pad(dechex($_SESSION['accent_color']), 4, "0", STR_PAD_LEFT)?>">
 				<?php echo (isset($banner_url)?'<img src="'.$banner_url.'?size=300">':"");?>
@@ -84,13 +83,9 @@ function is_animated($image){
 			</div>
 
 		</div>
-	<?php
-	}else{
-		?>
+	<?php }else{ ?>
 		<a class="btn btn-lg btn-discord btn-block" href="<?=$auth_url = url($client_id, $redirect_url, $scopes)?>">ログイン</a>
-    <?php
-	}
-    ?>
+    <?php } ?>
 	</main>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
 </body>
