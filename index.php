@@ -78,13 +78,13 @@ function is_animated($image){
 			</div>
 			<div class="body-wrapper">
 				<div class="body">
-					<a class="btn btn-lg btn-danger btn-block" href="./includes/logout">ログアウト</a>
+					<a class="btn btn-lg btn-danger btn-block" href="./includes/logout">LOGOUT</a>
 				</div>
 			</div>
 
 		</div>
 	<?php }else{ ?>
-		<a class="btn btn-lg btn-discord btn-block" href="<?=$auth_url = url($client_id, $redirect_url, $scopes)?>">ログイン</a>
+		<a class="btn btn-lg btn-discord btn-block" href="<?=$auth_url = url($client_id, $redirect_url, $scopes)?>">LOGIN</a>
     <?php } ?>
 	</main>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
