@@ -28,12 +28,12 @@ function is_animated($image){
     <link rel="icon" type="image/png" sizes="1024x1024" href="./images/takasumibot.png">
 
     <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/ fb# prefix属性: https://ogp.me/ns/ prefix属性#">
-    <meta property="og:url" content="https://auth.taka.ml/" />
+    <meta property="og:url" content="https://auth.taka.cf/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="トップページ" />
     <meta property="og:description" content="TakasumiBOT Web認証システム" />
     <meta property="og:site_name" content="TakasumiBOT Auth" />
-    <meta property="og:image" content="https://auth.taka.ml/images/takasumibot.png" />
+    <meta property="og:image" content="https://auth.taka.cf/images/takasumibot.png" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="TakasumiBOT Web認証システム">
