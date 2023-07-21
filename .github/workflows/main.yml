@@ -15,4 +15,4 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }} 
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }} 
           LOCAL_DIR: ./                          
-          REMOTE_DIR: /auth.taka.ml
+          REMOTE_DIR: /auth.taka.cf
