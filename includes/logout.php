@@ -4,5 +4,4 @@ session_destroy();
 
 header("Location: ../");
 exit;
-
 ?>
