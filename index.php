@@ -57,7 +57,7 @@ function is_animated($image){
 					<img src="<?=$avatar_url?>" height="94" />
 				</div>
 				<div class="header-text">
-					<?php if($_SESSION["discrim"]==0){ ?>
+					<?php if($_SESSION["discrim"] == 0){ ?>
 						<span class="header-username">
 							@<?=$_SESSION["username"]?>
 						</span>
