@@ -40,21 +40,24 @@ require_once __DIR__ . "/config.php";
 			</nav>
 		</header>
 		<main>
-			<div class="User card text-center">
             <?php if(isset($_SESSION["user"])){ ?>
-				<div>
-					<img class="icon" src="<?=$_SESSION["avatar"]?>" width="150" height="150" alt="アイコン">         
-				</div>
-				<div class="card-body">
-					<h1 class="card-title"><?=$_SESSION["name"]?></h1>
-					<p class="card-text"><small class="text-muted"><?=$_SESSION["id"]?></small></p>
-					<a href="./includes/logout" class="button btn btn-lg btn-outline-danger">ログアウト</a>
+				<div class="User card text-center">
+					<div>
+						<img class="icon" src="<?=$_SESSION["avatar"]?>" width="150" height="150" alt="アイコン">         
+					</div>
+					<div class="card-body">
+						<h1 class="card-title"><?=$_SESSION["name"]?></h1>
+						<p class="card-text"><small class="text-muted"><?=$_SESSION["id"]?></small></p>
+						<a href="./includes/logout" class="button btn btn-lg btn-outline-danger">ログアウト</a>
+					</div>
 				</div>
             <?php }else{ ?>
-                <div class="card-body">
-					<h1 class="card-title">TakasumiBOT Auth</h1>
-					<p class="card-text"><small>TakasumiBOT Web認証システム</small></p>
-					<a href="<?=OauthURL($client_id,$redirect_url,$scopes)?>" class="button btn btn-lg btn-outline-success">ログイン</a>
+				<div class="Top card text-center">
+					<div class="card-body">
+						<h1 class="card-title">TakasumiBOT Auth</h1>
+						<p class="card-text"><small>TakasumiBOT Web認証システム</small></p>
+						<a href="<?=OauthURL($client_id,$redirect_url,$scopes)?>" class="button btn btn-lg btn-outline-success">ログイン</a>
+					</div>
 				</div>
             <?php } ?>
 			</div>
