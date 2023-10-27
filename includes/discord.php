@@ -41,8 +41,8 @@ function getUser(){
     curl_close($curl);
    
     $_SESSION["user"] = $res;
-    $_SESSION["name"] = $res["discriminator"] !== 0 ? $res["username"] : $res["username"]."#".$res["discriminator"];
     $_SESSION["id"] = $res["id"];
+    $_SESSION["name"] = !empty($res["global_name"]) ? $res["global_name"] : $res["username"]."#".$res["discriminator"];
     $_SESSION["avatar"] = !empty($res["avatar"]) ? "https://cdn.discordapp.com/avatars/".$res["id"]."/".$res["avatar"].animate($res["avatar"]) : "https://cdn.discordapp.com/embed/avatars/0.png";
 
     if(!empty($res["id"])){
