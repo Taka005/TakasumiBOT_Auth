@@ -13,17 +13,24 @@
     margin-right: 10%;
 
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 80px;
 }
 
-.icon {
+.Icon {
     width: 150px;
     height: 150px;
     margin-top: 15px;
 }
 
-.button {
+.UserButton {
     margin-top: 20px;
+
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.TopButton {
+    margin-top: 100px;
 
     padding-left: 50px;
     padding-right: 50px;
