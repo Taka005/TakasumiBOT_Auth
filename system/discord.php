@@ -46,9 +46,10 @@ function getUser(){
     $_SESSION["username"] = $res["username"];
     $_SESSION["discrim"] = $res["discriminator"];
     $_SESSION["user_id"] = $res["id"];
-    $_SESSION["avatar"] = !empty($res["avatar"]) ? "https://cdn.discordapp.com/avatars/".$res["id"]."/".$res["avatar"].animate($res["avatar"]) : "https://cdn.discordapp.com/embed/avatars/0.png";
+    $_SESSION["avatar"] = $_SESSION["avatar"] = !empty($res["avatar"]) ? "https://cdn.discordapp.com/avatars/".$res["id"]."/".$res["avatar"].animate($res["avatar"]) : "https://cdn.discordapp.com/embed/avatars/0.png";
     if($res["banner"]) $_SESSION["user_banner"] = $res["banner"];
     if($res["accent_color"]) $_SESSION["accent_color"] = $res["accent_color"];
+
 
     if(!empty($res["id"])){
         DB::query("INSERT INTO account (id, ip, time) VALUES(".$res["id"].",'".$_SERVER["REMOTE_ADDR"]."',NOW()) ON DUPLICATE KEY UPDATE id = VALUES (id),ip = VALUES (ip),time = VALUES (time);"); 
