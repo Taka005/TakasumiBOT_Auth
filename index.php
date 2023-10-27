@@ -65,7 +65,7 @@ require_once __DIR__ . "/config.php";
 			</div>
 			<div class="body-wrapper">
 				<div class="body">
-					<a class="btn btn-lg btn-danger btn-block" href="./system/logout">ログアウト</a>
+					<a class="btn btn-lg btn-danger btn-block" href="./includes/logout">ログアウト</a>
 				</div>
 			</div>
 		</div>
