@@ -56,7 +56,7 @@ require_once __DIR__ . "/config.php";
 					<div class="card-body">
 						<h1 class="card-title">TakasumiBOT Auth</h1>
 						<p class="card-text"><small>TakasumiBOT Web認証システム</small></p>
-						<a href="<?=OauthURL($client_id,$redirect_url,$scopes)?>" class="button btn btn-lg btn-outline-success">ログイン</a>
+						<a href="<?=OauthURL($client_id,$redirect_url,$scopes)?>" class="TopButton btn btn-lg btn-outline-success">ログイン</a>
 					</div>
 				</div>
             <?php } ?>
