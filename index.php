@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . "/includes/discord.php";
-require_once __DIR__ . "/config.php";
+require_once __DIR__."/includes/discord.php";
+require_once __DIR__."/config.php";
 ?>
 <html lang="ja">
 	<head>
