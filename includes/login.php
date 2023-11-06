@@ -8,6 +8,7 @@ if($mute[0]) return print("アクセスが許可されていません");
 
 Oauth($redirect_url,$client_id,$secret_id);
 getUser();
+setRole($client_id);
 
 header("Location: ../");
 exit;

@@ -23,7 +23,7 @@ function Oauth($redirect_url,$client_id,$client_secret){
     curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
     $res = json_decode(curl_exec($curl),true);
     curl_close($curl);
-   
+
     $_SESSION["token"] = $res["access_token"];
 }
 
@@ -39,13 +39,31 @@ function getUser(){
     ));
     $res = json_decode(curl_exec($curl),true);
     curl_close($curl);
-   
+
     $_SESSION["user"] = $res;
     $_SESSION["id"] = $res["id"];
     $_SESSION["name"] = !empty($res["global_name"]) ? $res["global_name"] : $res["username"]."#".$res["discriminator"];
     $_SESSION["avatar"] = !empty($res["avatar"]) ? "https://cdn.discordapp.com/avatars/".$res["id"]."/".$res["avatar"].animate($res["avatar"]) : "https://cdn.discordapp.com/embed/avatars/0.png";
 
     if(!empty($res["id"])){
-        DB::query("INSERT INTO account (id, ip, time) VALUES('".$res["id"]."','".$_SERVER["REMOTE_ADDR"]."',NOW()) ON DUPLICATE KEY UPDATE id = VALUES (id),ip = VALUES (ip),time = VALUES (time);"); 
+        DB::query("INSERT INTO account (id, ip, time) VALUES('".$res["id"]."','".$_SERVER["REMOTE_ADDR"]."',NOW()) ON DUPLICATE KEY UPDATE id = VALUES (id),ip = VALUES (ip),time = VALUES (time);");
     }
+}
+
+function setRole($clientid){
+    if(!$_SESSION["token"]) return;
+
+    $curl = curl_init();
+    curl_setopt($curl,CURLOPT_URL,"https://discord.com/api/v10/users/@me/applications/".$clientid."/role-connection");
+    curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
+    curl_setopt($curl,CURLOPT_POST,true);
+    curl_setopt($curl,CURLOPT_POSTFIELDS,http_build_query(array(
+        "platform_name"=>"TakasumiBOT Account"
+    )));
+    curl_setopt($curl,CURLOPT_HTTPHEADER,array(
+        "Content-Type: application/json",
+        "Authorization: Bearer ".$_SESSION["token"]
+    ));
+    curl_exec($curl);
+    curl_close($curl);
 }
