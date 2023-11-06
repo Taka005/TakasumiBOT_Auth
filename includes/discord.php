@@ -49,21 +49,3 @@ function getUser(){
         DB::query("INSERT INTO account (id, ip, time) VALUES('".$res["id"]."','".$_SERVER["REMOTE_ADDR"]."',NOW()) ON DUPLICATE KEY UPDATE id = VALUES (id),ip = VALUES (ip),time = VALUES (time);");
     }
 }
-
-function setRole($clientid){
-    if(!$_SESSION["token"]) return;
-
-    $curl = curl_init();
-    curl_setopt($curl,CURLOPT_URL,"https://discord.com/api/v10/users/@me/applications/".$clientid."/role-connection");
-    curl_setopt($curl,CURLOPT_RETURNTRANSFER,true);
-    curl_setopt($curl,CURLOPT_CUSTOMREQUEST,"PUT");
-    curl_setopt($curl,CURLOPT_POSTFIELDS,http_build_query(array(
-        "platform_name"=>"TakasumiBOT Account"
-    )));
-    curl_setopt($curl,CURLOPT_HTTPHEADER,array(
-        "Content-Type: application/json",
-        "Authorization: Bearer ".$_SESSION["token"]
-    ));
-    curl_exec($curl);
-    curl_close($curl);
-}
