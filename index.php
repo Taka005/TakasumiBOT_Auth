@@ -8,7 +8,7 @@ require_once __DIR__."/config.php";
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<title>TakasumiBOT Auth</title>
-		
+
 		<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="./assets/img/apple-touch-icon-180x180.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
@@ -17,12 +17,12 @@ require_once __DIR__."/config.php";
 		<link rel="icon" type="image/png" sizes="1024x1024" href="./assets/img/takasumibot.png">
 
 		<head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/ fb# prefix属性: https://ogp.me/ns/ prefix属性#">
-		<meta property="og:url" content="https://auth.taka.cf/" />
+		<meta property="og:url" content="https://auth.takasumibot.com/" />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="トップページ" />
 		<meta property="og:description" content="TakasumiBOT Web認証システム" />
 		<meta property="og:site_name" content="TakasumiBOT Auth" />
-		<meta property="og:image" content="https://auth.taka.cf/assets/img/takasumibot.png" />
+		<meta property="og:image" content="https://auth.takasumibot.com/assets/img/takasumibot.png" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="TakasumiBOT Web認証システム">
@@ -43,7 +43,7 @@ require_once __DIR__."/config.php";
             <?php if(isset($_SESSION["user"])){ ?>
 				<div class="User card text-center">
 					<div>
-						<img class="Icon" src="<?=$_SESSION["avatar"]?>" width="150" height="150" alt="アイコン">         
+						<img class="Icon" src="<?=$_SESSION["avatar"]?>" width="150" height="150" alt="アイコン">
 					</div>
 					<div class="card-body">
 						<h1 class="card-title"><?=$_SESSION["name"]?></h1>
